@@ -2,6 +2,7 @@
 .DS_Store
 .vscode/
 .idea/
+node_modules
 
 # Logs
 logs
