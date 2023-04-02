@@ -1,0 +1,26 @@
+{{#each this}}
+  <a class='link' href='{{this.largeImageURL}}'>
+    <div class='photo-card'>
+      <img
+        src='{{this.webformatURL}}'
+        alt='{{this.tags}}'
+        width='300px'
+        loading='lazy'
+      />
+      <div class='info'>
+        <p class='info-item'>
+          <b>Likes {{this.likes}}</b>
+        </p>
+        <p class='info-item'>
+          <b>Views {{this.views}}</b>
+        </p>
+        <p class='info-item'>
+          <b>Comments {{this.comments}}</b>
+        </p>
+        <p class='info-item'>
+          <b>Downloads {{this.downloads}}</b>
+        </p>
+      </div>
+    </div>
+  </a>
+{{/each}}
