@@ -30,6 +30,8 @@ function handleFormSubmit(event) {
   }
 
   searchGallery();
+
+  // scroll();
 }
 
 async function searchGallery() {
@@ -50,7 +52,7 @@ async function searchGallery() {
 
     console.log(pixabayAPI.page);
 
-    if (data.hits.length > pixabayAPI.per_page) {
+    if (data.totalHits > pixabayAPI.per_page) {
       btnLoadMoreEl.classList.remove('is-hidden');
     }
 
@@ -73,11 +75,21 @@ async function searchLoadMoreImg() {
 
     if (data.hits.length < pixabayAPI.per_page) {
       btnLoadMoreEl.classList.add('is-hidden');
-      return Notiflix.Notify.failure(
+      return Notiflix.Notify.info(
         "We're sorry, but you've reached the end of search results."
       );
     }
   } catch (error) {
     console.log(error);
   }
+}
+
+function scroll() {
+  const { height: cardHeight } =
+    galleryEl.firstElementChild.getBoundingClientRect();
+
+  window.scrollBy({
+    top: cardHeight * 2,
+    behavior: 'smooth',
+  });
 }

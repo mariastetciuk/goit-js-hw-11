@@ -1,24 +1,28 @@
 {{#each this}}
-  <a class='link' href='{{this.largeImageURL}}'>
+  <a class='gallery__link' href='{{this.largeImageURL}}'>
     <div class='photo-card'>
       <img
+        class='photo-card__img'
         src='{{this.webformatURL}}'
         alt='{{this.tags}}'
-        width='300px'
         loading='lazy'
       />
       <div class='info'>
         <p class='info-item'>
-          <b>Likes {{this.likes}}</b>
+          <b>Likes:</b>
+          <span class='info-item__value'>{{this.likes}}</span>
         </p>
         <p class='info-item'>
-          <b>Views {{this.views}}</b>
+          <b>Comments:</b>
+          <span class='info-item__value'>{{this.comments}}</span>
         </p>
         <p class='info-item'>
-          <b>Comments {{this.comments}}</b>
+          <b>Views:</b>
+          <span class='info-item__value'>{{this.views}}</span>
         </p>
         <p class='info-item'>
-          <b>Downloads {{this.downloads}}</b>
+          <b>Downloads:</b>
+          <span class='info-item__value'>{{this.downloads}}</span>
         </p>
       </div>
     </div>
