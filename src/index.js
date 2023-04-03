@@ -31,7 +31,7 @@ function handleFormSubmit(event) {
 
   searchGallery();
 
-  // scroll();
+  scroll();
 }
 
 async function searchGallery() {
@@ -72,6 +72,7 @@ async function searchLoadMoreImg() {
     const { data } = await pixabayAPI.fetchImgs();
 
     galleryEl.insertAdjacentHTML('beforeend', createGallery(data.hits));
+    gallery.refresh();
 
     if (data.hits.length < pixabayAPI.per_page) {
       btnLoadMoreEl.classList.add('is-hidden');
