@@ -23,47 +23,69 @@ a {
 }
 
 .search-form {
+  padding-top: 10px;
+  padding-bottom: 10px;
   position: fixed;
   top: 0;
-  display: flex;
+  background: #005bbb;
+  box-shadow: 0px 1px 2px 1px rgba(6, 6, 63, 0.3);
+
   width: 100%;
-  height: 50px;
-  background-color: rgb(44, 44, 232);
-  padding: 10px 0;
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .input {
-  width: 300px;
-  height: 30px;
-  margin: auto;
-  display: block;
+  width: 20%;
+  border-radius: 4px 0 0 4px;
+  border: none;
   outline: none;
-  font-size: 18px;
+  background-color: #fff;
+  padding: 8px 10px;
+  font: inherit;
 }
 
 .search-btn {
-  position: absolute;
-  right: 490px;
-  top: 10px;
-  display: block;
-  height: 30px;
-  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5em;
   border: none;
-
-  width: 40px;
-
-  border: 1px solid grey;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-left: none;
-
+  background-color: #f8b007;
+  border-radius: 0 4px 4px 0;
   cursor: pointer;
+
+  transition: background-color var(--duration-timing),
+    fill var(--duration-timing), box-shadow var(--duration-timing);
+}
+
+.search-btn:hover,
+.search-btn:focus {
+  background-color: yellow;
+  fill: rgb(7, 31, 248);
+  box-shadow: 3px 3px 3px rgba(81, 81, 199, 0.12), 0px 4px 4px rgba(81, 81, 199),
+    1px 4px 6px rgba(81, 81, 199, 0.16);
 }
 
 .load-more {
   display: block;
-  margin: 0 auto;
+  margin: 25px auto 0 auto;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #071ff8;
+  font: inherit;
+  color: #ffffff;
+  cursor: pointer;
+
+  transition: background-color var(--duration-timing),
+    color var(--duration-timing);
+}
+
+.load-more:hover,
+.load-more:focus {
+  background-color: #f8b007;
+  color: rgb(7, 31, 248);
 }
 
 .is-hidden {
@@ -92,20 +114,19 @@ a {
   justify-content: center;
 }
 
-.photo-card {
-  background-color: rgb(238, 235, 232);
-}
-
 .gallery__link {
   display: block;
   transition: box-shadow var(--duration-timing);
   width: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
+  box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+
+  transition: box-shadow var(--duration-timing);
 }
 
 .gallery__link:hover,
 .gallery__link:focus {
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 3px 3px 3px rgba(81, 81, 199, 0.12), 0px 4px 4px rgba(81, 81, 199),
+    1px 4px 6px rgba(81, 81, 199, 0.16);
 }
 
 .photo-card__img {
