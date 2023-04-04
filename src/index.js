@@ -18,6 +18,8 @@ btnLoadMoreEl.addEventListener('click', handleLoadMoreBtnClick);
 
 function handleFormSubmit(event) {
   event.preventDefault();
+  galleryEl.innerHTML = '';
+  btnLoadMoreEl.classList.add('is-hidden');
   const form = event.currentTarget;
   const searchQuery = form.elements['searchQuery'].value.trim();
   pixabayAPI.q = searchQuery;
