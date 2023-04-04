@@ -32,8 +32,6 @@ function handleFormSubmit(event) {
   }
 
   searchGallery();
-
-  scroll();
 }
 
 async function searchGallery() {
@@ -52,13 +50,9 @@ async function searchGallery() {
 
     gallery.refresh();
 
-    console.log(pixabayAPI.page);
-
     if (data.totalHits > pixabayAPI.per_page) {
       btnLoadMoreEl.classList.remove('is-hidden');
     }
-
-    console.log(data);
   } catch (error) {
     console.log(error);
   }
@@ -76,6 +70,14 @@ async function searchLoadMoreImg() {
     galleryEl.insertAdjacentHTML('beforeend', createGallery(data.hits));
     gallery.refresh();
 
+    // const { height: cardHeight } =
+    //   galleryEl.firstElementChild.getBoundingClientRect();
+
+    // window.scrollBy({
+    //   top: cardHeight * 2,
+    //   behavior: 'smooth',
+    // });
+
     if (data.hits.length < pixabayAPI.per_page) {
       btnLoadMoreEl.classList.add('is-hidden');
       return Notiflix.Notify.info(
@@ -85,14 +87,4 @@ async function searchLoadMoreImg() {
   } catch (error) {
     console.log(error);
   }
-}
-
-function scroll() {
-  const { height: cardHeight } =
-    galleryEl.firstElementChild.getBoundingClientRect();
-
-  window.scrollBy({
-    top: cardHeight * 2,
-    behavior: 'smooth',
-  });
 }
